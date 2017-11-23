@@ -1,0 +1,103 @@
+.topbar {
+  padding-bottom: .5rem;
+  background-color: $white;
+  box-shadow: 0 1px 8px rgba(0,0,0,.3);
+
+  .ham-logo-wrapper {
+    display: inline-flex;
+    align-items: center;
+
+    svg {
+      display: none;
+      margin-right: 1rem;
+      fill: $dark;
+      cursor: pointer;
+    }
+  }
+
+  &-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-login-signup-cart {
+    display: inline-flex;
+    padding: 0;
+    margin: 0;
+
+    li {
+      list-style: none;
+
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+
+    a {
+      font-family: $font-family-base;
+      font-size: $font-size-base;
+      font-weight: $font-weight-normal;
+      line-height: $line-height-base;
+      color: $dark;
+      transition: color $transition-time-base ease;
+      will-change: color;
+
+      &:hover {
+        text-decoration: none;
+        color: $primary;
+      }
+    }
+  }
+  .cart-btn {
+    color: $white;
+    padding: .6rem 1.2rem;
+    border-radius: 4px;
+    background-color: $primary;
+    transition: color $transition-time-base ease, background-color $transition-time-base ease;
+    will-change: color, background-color;
+
+    &:hover {
+      color: $white;
+      background-color: darken($primary, 5%);
+
+      .cart-value {
+        background-color: darken($primary, 10%);
+      }
+    }
+  }
+  .cart-value {
+    display: inline-block;
+    // height: 1.5rem;
+    // min-width: 1.5rem;
+    padding: 0 .5rem;
+    text-align: center;
+    background-color: darken($primary, 5%);
+    border-radius: .75rem;
+    vertical-align: baseline;
+    transition: color $transition-time-base ease, background-color $transition-time-base ease;
+    will-change: color, background-color;
+  }
+}
+
+
+// topbar responsive css
+@media screen and (max-width: 1024px) {
+  .topbar {
+    padding-bottom: 0;
+    .ham-logo-wrapper {
+      svg {
+        display: block;
+      }
+    }
+  }
+}
+
+// @media screen and (max-width: 768px) {
+//   .topbar {
+//     &-container {
+//       flex-direction: column;
+//     }
+//   }
+// }
